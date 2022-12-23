@@ -1,0 +1,10 @@
+div {
+    border: 2px solid black;
+}
+
+p {
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center; 
+}
