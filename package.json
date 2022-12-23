@@ -1,0 +1,24 @@
+{
+  "name": "webrtc_interactive_app",
+  "version": "1.0.0",
+  "description": "This application will allow for video, audio, and text communication using WebRTC protocols.",
+  "main": "signal_server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrosent/WebRTC_Interactive_App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrosent/WebRTC_Interactive_App/issues"
+  },
+  "homepage": "https://github.com/jrosent/WebRTC_Interactive_App#readme",
+  "dependencies": {
+    "http": "^0.0.1-security",
+    "ws": "^8.11.0"
+  }
+}
