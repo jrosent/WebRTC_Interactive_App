@@ -1,5 +1,5 @@
 //create websocket for signaling
-let ws = new WebSocket("ws://localhost:8080", ['JSON']);
+let ws = new WebSocket("ws://localhost:8001", ['json']);
 
 //Turn server configuration for peer connection (open source)
 const config = {
@@ -28,12 +28,19 @@ const config = {
 //create webRTC connection
 let pc = new RTCPeerConnection(config);
 
+//Handle websocket open
+ws.addEventListener('open', (event) => {
+  console.log("Opened.");
+  ws.send(JSON.stringify({msg : "Websocket connection opened."}));
+  
+});
+
 //Websocket message event listener
 //Move functionality to its own module
-ws.onmessage(async (event) =>{
+ws.addEventListener('message', async (event) =>{
     //Parse the message data from the signal server
-    let msg = JSON.parse(event.data)
-
+    let msg = JSON.parse(event.data);
+    
     //Handle any possible message from the signal server
     switch(msg){
         //Login
@@ -42,5 +49,5 @@ ws.onmessage(async (event) =>{
         //Answer
         //New Ice Candidate
     }
-})
+});
 
